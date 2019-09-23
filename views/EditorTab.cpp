@@ -41,6 +41,8 @@ bool views::EditorTab::Create(wxWindow *parent, wxWindowID winid, const wxPoint 
 }
 
 void views::EditorTab::OnPaint(wxPaintEvent &event) {
+    std::cout << "PAINTING" << std::endl;
+
     wxPaintDC dc(this);
 
     dc.DrawText(wxT("Hello There"), 40, 60);
@@ -52,4 +54,12 @@ bool views::EditorTab::IsActiveTab() const {
 
 void views::EditorTab::SetActiveTab(bool isActive) {
     m_activeTab = isActive;
+}
+
+void views::EditorTab::OpenFile(std::string filename) {
+    ParseFilePathName(filename);
+}
+
+void views::EditorTab::ParseFilePathName(std::string filePathName) {
+
 }

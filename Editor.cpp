@@ -1,24 +1,28 @@
-//
-// Created by sebastian on 9/12/19.
-//
+/**
+ * The file containing the main window and the application entry point.
+ * @file Editor.cpp
+ * @author Sebastian Davaris
+ * @date 23-09-2019
+ */
 
 #include <fstream>
 #include "Editor.h"
 #include "FileData.h"
 #include "views/EditorTab.h"
+#include "controllers/TabController.h"
 
 wxIMPLEMENT_APP(App);
 
 bool App::OnInit() {
-    Editor* frame = new Editor;
-    frame->Show(true);
+    m_frame = std::make_unique<Editor>();
+    m_frame->Show(true);
     return true;
 }
 
 Editor::Editor() : wxFrame(nullptr, wxID_ANY, "SlangBase Editor"),
                 textEditor(new wxTextCtrl(this, ID_SAVE, "", wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE)),
-//                m_fileTree(new wxTreeCtrl(this)),
-                m_tab(new views::EditorTab(this, wxID_ANY, wxPoint(200, 200), wxSize(200, 200))) {
+                m_fileTree(new wxTreeCtrl(this)),
+                m_tabController(std::make_unique<controllers::TabController>()) {
     wxMenu * menufile = new wxMenu;
     menufile->Append(ID_HELLO, "&Hello...\tCTRL-H",
                      "Help string shown in status bar for this menu item");
@@ -43,19 +47,19 @@ Editor::Editor() : wxFrame(nullptr, wxID_ANY, "SlangBase Editor"),
 
     CreateStatusBar();
     SetStatusText("Welcome to wxWidgets");
-//
-//    wxTreeItemId rootId = m_fileTree->AddRoot("Roden");
-//
-//    DIR* dir;
-//    struct dirent* ent;
-//    if((dir = opendir("./")) != nullptr) {
-//        while ((ent = readdir(dir)) != nullptr) {
-//            m_fileTree->AppendItem(rootId, ent->d_name, -1, -1, new FileData(ent->d_name));
-//        }
-//        closedir(dir);
-//    }
-//
-//    m_fileTree->SetSize(0, 0, 300, 400, wxSIZE_AUTO_HEIGHT);
+
+    wxTreeItemId rootId = m_fileTree->AddRoot("Root");
+
+    DIR* dir;
+    struct dirent* ent;
+    if((dir = opendir("./")) != nullptr) {
+        while ((ent = readdir(dir)) != nullptr) {
+            m_fileTree->AppendItem(rootId, ent->d_name, -1, -1, new FileData(ent->d_name));
+        }
+        closedir(dir);
+    }
+
+    m_fileTree->SetSize(0, 0, 300, 400, wxSIZE_AUTO_HEIGHT);
 
     wxColour col(0X0082827B);
 
@@ -67,8 +71,9 @@ Editor::Editor() : wxFrame(nullptr, wxID_ANY, "SlangBase Editor"),
 
     textEditor->SetForegroundColour(foreground);
 
-    m_tab->Refresh();
+    m_tabController->AddTab(this);
 
+    // Bind events.
     Bind(wxEVT_MENU, &Editor::OnHello, this, ID_HELLO);
     Bind(wxEVT_MENU, &Editor::OnSave, this, ID_SAVE);
     Bind(wxEVT_MENU, &Editor::OnAbout, this, wxID_ABOUT);
@@ -84,6 +89,7 @@ void Editor::OnAbout(wxCommandEvent &event) {
                  "About SlangBase", wxOK | wxICON_INFORMATION);
 }
 
+//TODO: Remove because of test only method.
 void Editor::OnHello(wxCommandEvent &event) {
     wxLogMessage("Hello There");
 }
@@ -91,16 +97,18 @@ void Editor::OnHello(wxCommandEvent &event) {
 void Editor::OnSave(wxCommandEvent &event) {
     wxString content = textEditor->GetValue();
 
-//    wxString content = "Lol";
+    m_openFile = ((FileData*)m_fileTree->GetItemData(m_fileTree->GetFocusedItem()))->GetData();
 
-//    m_openFile = ((FileData*)m_fileTree->GetItemData(m_fileTree->GetFocusedItem()))->GetData();
-//
-//    if(m_openFile.empty())
-//        //TODO: Implement a user warning containing that no file have been opened, or create the new file
-//        return;
-//
-//    std::ofstream file;
-//    file.open(m_openFile);
-//    file << content.ToStdString();
-//    file.close();
+    if(m_openFile.empty())
+        //TODO: Implement a user warning containing that no file have been opened, or create the new file
+        return;
+
+    std::ofstream file;
+    file.open(m_openFile);
+    file << content.ToStdString();
+    file.close();
+}
+
+void Editor::OnOpen(wxCommandEvent &event) {
+    //TODO: Implement opening of file and ui logic.
 }

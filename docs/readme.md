@@ -7,4 +7,8 @@ Insert overview here...
 ## About
 SlangBase is a text editor with support for intellisence and [Proof reading], it will also have support for features like a simple file viewer and multiple tabs running in the same instance.
 
-##
+## TODO
+
+- Implement the tab system.
+- Implement the sidebar containing the "project" structure.
+- Implement the file handling.

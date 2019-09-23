@@ -12,6 +12,9 @@
 
 namespace views {
 
+    /**
+     * The Theme ID's for the program.
+     */
     enum {
         EDITOR_SHOW_BUTTON = 1,
         EDITOR_DARK_THEME = 2,
@@ -27,11 +30,49 @@ namespace views {
      */
     class EditorTab : public wxControl {
     public:
+        /**
+         * The explicit empty constructor.
+         * @author Sebastian Davaris
+         * @date 23-09-2019
+         */
         explicit EditorTab();
 
+        /**
+         * Creates a new EditorTab.
+         * @author Sebastian Davaris
+         * @date 23-09-2019
+         * @param parent The parent element this element is a child of.
+         * @param winid The window ID.
+         * @param point The position of the element.
+         * @param size The size of the element.
+         * @param style The layout style of the element.
+         * @param base ?
+         * @param mindigits ?
+         * @param min ?
+         * @param max ?
+         * @param initial ?
+         * @param name ?
+         */
         EditorTab(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& point = wxDefaultPosition, const wxSize& size = wxDefaultSize,
                   long style = 0L, unsigned int base = 10, unsigned int mindigits = 0, int min = 0, int max = 0x100, int initial = 0, const wxString& name = "EditorTab");
 
+        /**
+         * Creates a new EditorTab.
+         * @author Sebastian Davaris
+         * @date 23-09-2019
+         * @param parent The parent element this element is a child of.
+         * @param winid the window ID.
+         * @param point The position of the element.
+         * @param size The size of the element.
+         * @param style The layout style of the element.
+         * @param base ?
+         * @param mindigits ?
+         * @param min ?
+         * @param max ?
+         * @param initial ?
+         * @param name ?
+         * @return True if succeeded otherwise false.
+         */
         bool Create(wxWindow *parent, wxWindowID winid = wxID_ANY, const wxPoint& point = wxDefaultPosition, const wxSize& size = wxDefaultSize,
                     long style = 0L, unsigned int base = 10, unsigned int mindigits = 0, int min = 0, int max = 0x100, int initial = 0, const wxString& name = "EditorTab");
 
@@ -50,8 +91,30 @@ namespace views {
          */
         void SetActiveTab(bool isActive = true);
 
+        /**
+         * Opens a file in the current tab.
+         * @author Sebastian Davaris
+         * @date 23-09-2019
+         * @param filename The name and path of the file.
+         */
+        void OpenFile(std::string filename);
+
     protected:
+        /**
+         * The paint event callback.
+         * @author Sebastian Davaris
+         * @date 23-09-2019
+         * @param event The event Arguments.
+         */
         void OnPaint(wxPaintEvent& event);
+
+        /**
+         * Parses a file path and name and splits them into the private variables.
+         * @author Sebastian Davaris
+         * @date 23-09-2019
+         * @param filePathName The file path and name of the file.
+         */
+        void ParseFilePathName(std::string filePathName);
 
     private:
         wxTextCtrl* m_editor;
