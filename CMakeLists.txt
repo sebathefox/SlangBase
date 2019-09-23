@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD 14)
 find_package(wxWidgets REQUIRED COMPONENTS net core base)
 include(${wxWidgets_USE_FILE})
 
-add_executable(SlangBase Editor.cpp Editor.h FileData.cpp FileData.h)
+add_executable(SlangBase Editor.cpp Editor.h FileData.cpp FileData.h views/EditorTab.h views/EditorTab.cpp)
 target_link_libraries(SlangBase ${wxWidgets_LIBRARIES})

@@ -18,6 +18,10 @@ enum {
     ID_SAVE = 2
 };
 
+namespace views {
+    class EditorTab;
+}
+
 class App : public wxApp {
 public:
 virtual bool OnInit();
@@ -30,7 +34,9 @@ public:
 private:
     wxTextCtrl* textEditor;
 
-    wxTreeCtrl* m_fileTree;
+//    wxTreeCtrl* m_fileTree;
+
+    views::EditorTab* m_tab;
 
     std::string m_openFile;
 
