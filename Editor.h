@@ -28,6 +28,54 @@ enum {
     ID_OPEN = 3
 };
 
+/**
+ * No one knows what it's like
+ * To be the badman
+ * To be the sad man
+ * Behind blue eyes
+ * And no one knows what it's like
+ * To be hated
+ * To be faded to telling only lies
+ *
+ * But my dreams they aren't as empty
+ * As my conscience seems to be
+ * I have hours, only lonely
+ * My love is vengeance
+ * That's never free
+ *
+ * No one knows what its like
+ * To feel these feelings
+ * Like i do
+ * And i blame you
+ * No one bites back as hard
+ * On their anger
+ * None of my pain and woe
+ * Can show through
+ *
+ * But my dreams they aren't as empty
+ * As my conscience seems to be
+ * I have hours, only lonely
+ * My love is vengeance
+ * That's never free
+ *
+ * No one knows what it's like
+ * To be mistreated, to be defeated
+ * Behind blue eyes
+ * An no one know how to say
+ * That they're sorry and don't worry
+ * I'm not telling lies
+ *
+ * But my dreams they aren't as empty
+ * As my conscience seems to be
+ * I have hours, only lonely
+ * My love is vengeance
+ * That's never free
+ *
+ * No one knows what its like
+ * To be the bad man
+ * To be the sad man
+ * Behind blue eyes
+ */
 namespace controllers {
     class TabController;
 }
@@ -99,6 +147,13 @@ private:
      */
     void OnOpen(wxCommandEvent& event);
 
+    /**
+     * The resize event callback.
+     * @author Sebastian Davaris
+     * @date 24-09-2019
+     * @param event The event arguments.
+     */
+    void OnSize(wxSizeEvent& event);
 };
 
 #endif //SLANGBASE_EDITOR_H

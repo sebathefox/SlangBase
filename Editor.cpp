@@ -16,6 +16,7 @@ wxIMPLEMENT_APP(App);
 bool App::OnInit() {
     m_frame = std::make_unique<Editor>();
     m_frame->Show(true);
+    m_frame->Fit();
     return true;
 }
 
@@ -73,11 +74,18 @@ Editor::Editor() : wxFrame(nullptr, wxID_ANY, "SlangBase Editor"),
 
     m_tabController->AddTab(this);
 
+    views::EditorTab& tab = m_tabController->GetTab(0);
+
+    tab.OpenFile("./kek.txt");
+
+
+
     // Bind events.
     Bind(wxEVT_MENU, &Editor::OnHello, this, ID_HELLO);
     Bind(wxEVT_MENU, &Editor::OnSave, this, ID_SAVE);
     Bind(wxEVT_MENU, &Editor::OnAbout, this, wxID_ABOUT);
     Bind(wxEVT_MENU, &Editor::OnExit, this, wxID_EXIT);
+    Bind(wxEVT_SIZE, &Editor::OnSize, this);
 }
 
 void Editor::OnExit(wxCommandEvent &event) {
@@ -95,7 +103,8 @@ void Editor::OnHello(wxCommandEvent &event) {
 }
 
 void Editor::OnSave(wxCommandEvent &event) {
-    wxString content = textEditor->GetValue();
+    //wxString content = textEditor->GetValue();
+    std::string content = m_tabController->GetTab(0).GetText();
 
     m_openFile = ((FileData*)m_fileTree->GetItemData(m_fileTree->GetFocusedItem()))->GetData();
 
@@ -105,10 +114,17 @@ void Editor::OnSave(wxCommandEvent &event) {
 
     std::ofstream file;
     file.open(m_openFile);
-    file << content.ToStdString();
+    file << content;
     file.close();
 }
 
 void Editor::OnOpen(wxCommandEvent &event) {
     //TODO: Implement opening of file and ui logic.
+
+}
+
+void Editor::OnSize(wxSizeEvent &event) {
+    m_tabController->GetTab(0).SetSize(200, 200, this->m_width - 215, this->m_width - 215);
+
+    wxTopLevelWindowBase::OnSize(event);
 }

@@ -9,11 +9,14 @@
 #define SLANGBASE_EDITORTAB_H
 
 #include <wx/wx.h>
+#include <bits/unique_ptr.h>
 
 namespace views {
 
     /**
      * The Theme ID's for the program.
+     * @author Sebastian Davaris
+     * @date 24-09-2019
      */
     enum {
         EDITOR_SHOW_BUTTON = 1,
@@ -97,7 +100,11 @@ namespace views {
          * @date 23-09-2019
          * @param filename The name and path of the file.
          */
-        void OpenFile(std::string filename);
+        void OpenFile(const std::string& filename);
+
+        std::string GetText();
+
+        void SetText(const std::string& text);
 
     protected:
         /**
@@ -109,15 +116,27 @@ namespace views {
         void OnPaint(wxPaintEvent& event);
 
         /**
+         * The resize event callback.
+         * @author Sebastian Davaris
+         * @date 24-09-2019
+         * @param event The event arguments.
+         */
+        void OnSize(wxSizeEvent& event);
+
+        /**
          * Parses a file path and name and splits them into the private variables.
          * @author Sebastian Davaris
          * @date 23-09-2019
          * @param filePathName The file path and name of the file.
          */
-        void ParseFilePathName(std::string filePathName);
+        void ParseFilePathName(const std::string& filePathName);
 
     private:
+        wxBoxSizer* m_boxSizer;
+
         wxTextCtrl* m_editor;
+
+        std::unique_ptr<FILE> m_file;
 
         std::string m_filepath;
         std::string m_filename;

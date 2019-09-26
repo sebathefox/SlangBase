@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <bits/unique_ptr.h>
+#include <wx/gdicmn.h>
 
 // Forward declarations.
 namespace views {
@@ -51,10 +52,14 @@ namespace controllers {
          */
         views::EditorTab& GetTab(unsigned int index);
 
+        void SetDefaultPosition(wxPoint point);
+
     protected:
 
     private:
         std::vector<std::unique_ptr<views::EditorTab>> m_tabs;
+
+        wxPoint m_point;
     };
 }
 

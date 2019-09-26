@@ -20,11 +20,15 @@ bool controllers::TabController::AddTab(wxWindow* parent) {
         return false;
     }
 
-    this->m_tabs.push_back(std::make_unique<views::EditorTab>(parent));
+    this->m_tabs.push_back(std::make_unique<views::EditorTab>(parent, wxID_ANY, wxPoint(200, 200), wxSize(200, 200), views::EDITOR_DEFAULT_STYLE, NULL, NULL, NULL, NULL, NULL, "EditorTab"));
 
     return true;
 }
 
 views::EditorTab &controllers::TabController::GetTab(unsigned int index) {
     return *(this->m_tabs.at(index));
+}
+
+void controllers::TabController::SetDefaultPosition(wxPoint point) {
+    m_point = point;
 }

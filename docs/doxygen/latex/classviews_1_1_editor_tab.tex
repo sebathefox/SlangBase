@@ -1,0 +1,261 @@
+\hypertarget{classviews_1_1_editor_tab}{}\section{views\+:\+:Editor\+Tab Class Reference}
+\label{classviews_1_1_editor_tab}\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+
+
+{\ttfamily \#include $<$Editor\+Tab.\+h$>$}
+
+
+
+Inheritance diagram for views\+:\+:Editor\+Tab\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classviews_1_1_editor_tab__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for views\+:\+:Editor\+Tab\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classviews_1_1_editor_tab__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classviews_1_1_editor_tab_a17ae375bc6f448b049aef6bbb4b61bf2}{Editor\+Tab} ()
+\item 
+\hyperlink{classviews_1_1_editor_tab_a63d17a88c1f547897ef4c88a983d47d3}{Editor\+Tab} (wx\+Window $\ast$parent, wx\+Window\+ID winid=wx\+I\+D\+\_\+\+A\+NY, const wx\+Point \&point=wx\+Default\+Position, const wx\+Size \&size=wx\+Default\+Size, long style=0\+L, unsigned int base=10, unsigned int mindigits=0, int min=0, int max=0x100, int initial=0, const wx\+String \&name=\char`\"{}\+Editor\+Tab\char`\"{})
+\item 
+bool \hyperlink{classviews_1_1_editor_tab_a068d03e26a3396fe95d881a09bb5ad2f}{Create} (wx\+Window $\ast$parent, wx\+Window\+ID winid=wx\+I\+D\+\_\+\+A\+NY, const wx\+Point \&point=wx\+Default\+Position, const wx\+Size \&size=wx\+Default\+Size, long style=0\+L, unsigned int base=10, unsigned int mindigits=0, int min=0, int max=0x100, int initial=0, const wx\+String \&name=\char`\"{}\+Editor\+Tab\char`\"{})
+\item 
+bool \hyperlink{classviews_1_1_editor_tab_aa19848d37030e76ebd2782166b2ba831}{Is\+Active\+Tab} () const
+\item 
+void \hyperlink{classviews_1_1_editor_tab_a39f3bd857e7553f8c0f36ebb99eebbfd}{Set\+Active\+Tab} (bool is\+Active=true)
+\item 
+void \hyperlink{classviews_1_1_editor_tab_a64a45fb74ae413acf6485294b55294d5}{Open\+File} (const std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a60b1b59b565b917e34dab63ac5c1c75a}\label{classviews_1_1_editor_tab_a60b1b59b565b917e34dab63ac5c1c75a}} 
+std\+::string {\bfseries Get\+Text} ()
+\item 
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a5670f3df008357bf14007c34f94ddb18}\label{classviews_1_1_editor_tab_a5670f3df008357bf14007c34f94ddb18}} 
+void {\bfseries Set\+Text} (const std\+::string \&text)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classviews_1_1_editor_tab_a55d9432481adb0e67de440456d061311}{On\+Paint} (wx\+Paint\+Event \&event)
+\item 
+void \hyperlink{classviews_1_1_editor_tab_a5b404f2ea3e322481fe63a4b2c24154c}{On\+Size} (wx\+Size\+Event \&event)
+\item 
+void \hyperlink{classviews_1_1_editor_tab_ab52b9be41dc185565539d2f9cf3ce515}{Parse\+File\+Path\+Name} (const std\+::string \&file\+Path\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classviews_1_1_editor_tab}{Editor\+Tab} class. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20-\/09-\/2019 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a17ae375bc6f448b049aef6bbb4b61bf2}\label{classviews_1_1_editor_tab_a17ae375bc6f448b049aef6bbb4b61bf2}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!Editor\+Tab@{Editor\+Tab}}
+\index{Editor\+Tab@{Editor\+Tab}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{Editor\+Tab()}{EditorTab()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily views\+::\+Editor\+Tab\+::\+Editor\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+The explicit empty constructor. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a63d17a88c1f547897ef4c88a983d47d3}\label{classviews_1_1_editor_tab_a63d17a88c1f547897ef4c88a983d47d3}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!Editor\+Tab@{Editor\+Tab}}
+\index{Editor\+Tab@{Editor\+Tab}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{Editor\+Tab()}{EditorTab()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily views\+::\+Editor\+Tab\+::\+Editor\+Tab (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Window\+ID}]{winid = {\ttfamily wxID\+\_\+ANY},  }\item[{const wx\+Point \&}]{point = {\ttfamily wxDefaultPosition},  }\item[{const wx\+Size \&}]{size = {\ttfamily wxDefaultSize},  }\item[{long}]{style = {\ttfamily 0L},  }\item[{unsigned int}]{base = {\ttfamily 10},  }\item[{unsigned int}]{mindigits = {\ttfamily 0},  }\item[{int}]{min = {\ttfamily 0},  }\item[{int}]{max = {\ttfamily 0x100},  }\item[{int}]{initial = {\ttfamily 0},  }\item[{const wx\+String \&}]{name = {\ttfamily \char`\"{}EditorTab\char`\"{}} }\end{DoxyParamCaption})}
+
+Creates a new \hyperlink{classviews_1_1_editor_tab}{Editor\+Tab}. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent element this element is a child of. \\
+\hline
+{\em winid} & The window ID. \\
+\hline
+{\em point} & The position of the element. \\
+\hline
+{\em size} & The size of the element. \\
+\hline
+{\em style} & The layout style of the element. \\
+\hline
+{\em base} & ? \\
+\hline
+{\em mindigits} & ? \\
+\hline
+{\em min} & ? \\
+\hline
+{\em max} & ? \\
+\hline
+{\em initial} & ? \\
+\hline
+{\em name} & ? \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a068d03e26a3396fe95d881a09bb5ad2f}\label{classviews_1_1_editor_tab_a068d03e26a3396fe95d881a09bb5ad2f}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!Create@{Create}}
+\index{Create@{Create}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily bool views\+::\+Editor\+Tab\+::\+Create (\begin{DoxyParamCaption}\item[{wx\+Window $\ast$}]{parent,  }\item[{wx\+Window\+ID}]{winid = {\ttfamily wxID\+\_\+ANY},  }\item[{const wx\+Point \&}]{point = {\ttfamily wxDefaultPosition},  }\item[{const wx\+Size \&}]{size = {\ttfamily wxDefaultSize},  }\item[{long}]{style = {\ttfamily 0L},  }\item[{unsigned int}]{base = {\ttfamily 10},  }\item[{unsigned int}]{mindigits = {\ttfamily 0},  }\item[{int}]{min = {\ttfamily 0},  }\item[{int}]{max = {\ttfamily 0x100},  }\item[{int}]{initial = {\ttfamily 0},  }\item[{const wx\+String \&}]{name = {\ttfamily \char`\"{}EditorTab\char`\"{}} }\end{DoxyParamCaption})}
+
+Creates a new \hyperlink{classviews_1_1_editor_tab}{Editor\+Tab}. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & The parent element this element is a child of. \\
+\hline
+{\em winid} & the window ID. \\
+\hline
+{\em point} & The position of the element. \\
+\hline
+{\em size} & The size of the element. \\
+\hline
+{\em style} & The layout style of the element. \\
+\hline
+{\em base} & ? \\
+\hline
+{\em mindigits} & ? \\
+\hline
+{\em min} & ? \\
+\hline
+{\em max} & ? \\
+\hline
+{\em initial} & ? \\
+\hline
+{\em name} & ? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if succeeded otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_aa19848d37030e76ebd2782166b2ba831}\label{classviews_1_1_editor_tab_aa19848d37030e76ebd2782166b2ba831}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!Is\+Active\+Tab@{Is\+Active\+Tab}}
+\index{Is\+Active\+Tab@{Is\+Active\+Tab}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{Is\+Active\+Tab()}{IsActiveTab()}}
+{\footnotesize\ttfamily bool views\+::\+Editor\+Tab\+::\+Is\+Active\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+checks if tab is currently active. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+\begin{DoxyReturn}{Returns}
+Returns true if active tab otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a55d9432481adb0e67de440456d061311}\label{classviews_1_1_editor_tab_a55d9432481adb0e67de440456d061311}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!On\+Paint@{On\+Paint}}
+\index{On\+Paint@{On\+Paint}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{On\+Paint()}{OnPaint()}}
+{\footnotesize\ttfamily void views\+::\+Editor\+Tab\+::\+On\+Paint (\begin{DoxyParamCaption}\item[{wx\+Paint\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The paint event callback. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event Arguments. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a5b404f2ea3e322481fe63a4b2c24154c}\label{classviews_1_1_editor_tab_a5b404f2ea3e322481fe63a4b2c24154c}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!On\+Size@{On\+Size}}
+\index{On\+Size@{On\+Size}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{On\+Size()}{OnSize()}}
+{\footnotesize\ttfamily void views\+::\+Editor\+Tab\+::\+On\+Size (\begin{DoxyParamCaption}\item[{wx\+Size\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The resize event callback. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24-\/09-\/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The event arguments. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a64a45fb74ae413acf6485294b55294d5}\label{classviews_1_1_editor_tab_a64a45fb74ae413acf6485294b55294d5}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!Open\+File@{Open\+File}}
+\index{Open\+File@{Open\+File}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{Open\+File()}{OpenFile()}}
+{\footnotesize\ttfamily void views\+::\+Editor\+Tab\+::\+Open\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+Opens a file in the current tab. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name and path of the file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_ab52b9be41dc185565539d2f9cf3ce515}\label{classviews_1_1_editor_tab_ab52b9be41dc185565539d2f9cf3ce515}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!Parse\+File\+Path\+Name@{Parse\+File\+Path\+Name}}
+\index{Parse\+File\+Path\+Name@{Parse\+File\+Path\+Name}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{Parse\+File\+Path\+Name()}{ParseFilePathName()}}
+{\footnotesize\ttfamily void views\+::\+Editor\+Tab\+::\+Parse\+File\+Path\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Parses a file path and name and splits them into the private variables. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path\+Name} & The file path and name of the file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classviews_1_1_editor_tab_a39f3bd857e7553f8c0f36ebb99eebbfd}\label{classviews_1_1_editor_tab_a39f3bd857e7553f8c0f36ebb99eebbfd}} 
+\index{views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}!Set\+Active\+Tab@{Set\+Active\+Tab}}
+\index{Set\+Active\+Tab@{Set\+Active\+Tab}!views\+::\+Editor\+Tab@{views\+::\+Editor\+Tab}}
+\subsubsection{\texorpdfstring{Set\+Active\+Tab()}{SetActiveTab()}}
+{\footnotesize\ttfamily void views\+::\+Editor\+Tab\+::\+Set\+Active\+Tab (\begin{DoxyParamCaption}\item[{bool}]{is\+Active = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Sets the tab to active or inactive. \begin{DoxyAuthor}{Author}
+Sebastian Davaris 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23-\/09-\/2019 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+views/\hyperlink{_editor_tab_8h}{Editor\+Tab.\+h}\item 
+views/Editor\+Tab.\+cpp\end{DoxyCompactItemize}
